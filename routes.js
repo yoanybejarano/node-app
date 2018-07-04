@@ -4,6 +4,8 @@ var express = require('express'),
     home = require('./controllers/home'),
     image = require('./controllers/image');
 
+router.delete('/images/:image_id', image.remove);
+
 module.exports = function (app) {
     router.get('/', home.index);
     router.get('/images/:image_id', image.index);
